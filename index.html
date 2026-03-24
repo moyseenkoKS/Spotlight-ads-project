@@ -10,59 +10,78 @@
   <style>
     body {
       font-family: 'Inter', sans-serif;
-      max-width: 900px;
-      margin: 40px auto;
-      line-height: 1.6;
-      color: #1a1a1a;
-      background: linear-gradient(135deg, #f8fafc, #eef2ff);
-      padding: 20px;
+      margin: 0;
+      background: radial-gradient(circle at top, #1f2937, #020617);
+      color: #e5e7eb;
     }
 
     .container {
-      background: white;
+      max-width: 900px;
+      margin: 60px auto;
       padding: 40px;
+      background: rgba(15, 23, 42, 0.85);
       border-radius: 16px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+      backdrop-filter: blur(10px);
     }
 
     h1 {
-      font-size: 32px;
+      font-size: 34px;
       margin-bottom: 10px;
+      color: #ffffff;
     }
 
     h2 {
       margin-top: 30px;
       font-size: 20px;
+      color: #c7d2fe;
     }
 
     p {
-      color: #444;
+      color: #cbd5f5;
     }
 
     ul {
       padding-left: 20px;
+      color: #e5e7eb;
+    }
+
+    li {
+      margin-bottom: 6px;
     }
 
     .button {
       display: inline-block;
       padding: 12px 18px;
       margin-top: 10px;
-      background: #4f46e5;
+      background: linear-gradient(135deg, #6366f1, #8b5cf6);
       color: white;
       text-decoration: none;
-      border-radius: 8px;
+      border-radius: 10px;
       font-weight: 500;
       transition: 0.2s;
+      box-shadow: 0 5px 20px rgba(99,102,241,0.4);
     }
 
     .button:hover {
-      background: #4338ca;
+      transform: translateY(-1px);
+      box-shadow: 0 8px 25px rgba(99,102,241,0.6);
     }
 
     footer {
       margin-top: 40px;
       padding-top: 20px;
-      border-top: 1px solid #eee;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .tag {
+      display: inline-block;
+      background: rgba(99,102,241,0.15);
+      color: #a5b4fc;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      margin-bottom: 15px;
     }
 
   </style>
@@ -72,43 +91,45 @@
 
 <div class="container">
 
+<div class="tag">Google Ads • Automation • Reporting</div>
+
 <h1>Google Ads Reporting Tool</h1>
 
 <p>
-This application automates the collection and processing of advertising data
-from Google Ads accounts and prepares structured datasets for Looker Studio reporting.
+A lightweight internal tool designed to automate the extraction,
+processing, and reporting of Google Ads data for use in Looker Studio dashboards.
 </p>
 
 <h2>What the Application Does</h2>
 <ul>
-  <li>Securely connects to Google Ads via OAuth</li>
-  <li>Retrieves daily campaign performance data</li>
-  <li>Processes campaign, ad group, and ad-level metrics</li>
-  <li>Generates datasets for reporting and visualization</li>
-  <li>Supports automated reporting workflows</li>
+  <li>Secure OAuth connection to Google Ads accounts</li>
+  <li>Automated daily data extraction</li>
+  <li>Campaign, ad group, and ad-level performance tracking</li>
+  <li>Structured dataset generation for analytics</li>
+  <li>Integration with Looker Studio for visualization</li>
 </ul>
 
 <h2>Data Used</h2>
 <p>
-The application only accesses advertising performance data, including:
+The application accesses only advertising performance data:
 </p>
 <ul>
   <li>Campaign and ad identifiers</li>
   <li>Impressions, clicks, cost, and conversions</li>
 </ul>
 
-<p>No personal user data is collected or processed.</p>
+<p>No personal user data is collected, stored, or processed.</p>
 
 <h2>Use Case</h2>
 <p>
-This tool is intended for internal use or by marketing professionals
-to analyze and monitor advertising performance across accounts.
+This tool is intended for internal analytics or for marketing professionals
+managing advertising accounts and generating performance reports.
 </p>
 
 <h2>Security</h2>
 <p>
-All access is authorized via OAuth. API credentials are handled securely
-and are not shared with third parties.
+All access is authorized via OAuth. API credentials and tokens are handled securely
+and never shared with third parties.
 </p>
 
 <h2>Contact</h2>
