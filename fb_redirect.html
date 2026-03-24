@@ -1,7 +1,95 @@
 <!DOCTYPE html>
-<html>
-  <body>
-    <h2>Авторизация Meta завершена</h2>
-    <p>Скопируйте access_token из адресной строки браузера.</p>
-  </body>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Facebook OAuth Redirect</title>
+
+  <!-- Inter font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      background: radial-gradient(circle at top, #1f2937, #020617);
+      color: #e5e7eb;
+    }
+
+    .container {
+      max-width: 700px;
+      margin: 80px auto;
+      padding: 40px;
+      background: rgba(15, 23, 42, 0.85);
+      border-radius: 16px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+      backdrop-filter: blur(10px);
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 32px;
+      margin-bottom: 20px;
+      color: #ffffff;
+    }
+
+    p {
+      font-size: 16px;
+      color: #cbd5f5;
+      line-height: 1.6;
+    }
+
+    .token {
+      margin-top: 20px;
+      padding: 12px 16px;
+      background: rgba(99,102,241,0.1);
+      border-radius: 12px;
+      word-break: break-all;
+      font-family: monospace;
+      font-size: 14px;
+      color: #6366f1;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 10px 16px;
+      margin-top: 30px;
+      background: linear-gradient(135deg, #6366f1, #8b5cf6);
+      color: white;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+  </style>
+
+  <script>
+    // Автоматическое получение токена из URL
+    window.addEventListener('DOMContentLoaded', () => {
+      const hash = window.location.hash;
+      const tokenContainer = document.getElementById('token');
+      if (hash.includes('access_token')) {
+        const params = new URLSearchParams(hash.substring(1));
+        const token = params.get('access_token');
+        tokenContainer.textContent = token;
+      } else {
+        tokenContainer.textContent = "Токен не найден. Скопируйте его вручную из адресной строки браузера.";
+      }
+    });
+  </script>
+</head>
+
+<body>
+
+<div class="container">
+  <h1>Авторизация Facebook завершена</h1>
+  <p>
+    Ваш токен доступа возвращён в адресной строке URL. Скопируйте его ниже, 
+    или, если он не появился автоматически, скопируйте вручную из браузера.
+  </p>
+
+  <div id="token" class="token">Загрузка токена...</div>
+
+  <a class="button" href="https://your-homepage.com">Вернуться на главную</a>
+</div>
+
+</body>
 </html>
