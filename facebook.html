@@ -96,13 +96,14 @@
       transition: 0.2s;
       box-shadow: 0 6px 25px rgba(24,119,242,0.5);
     }
-
+    
     .fb-logo {
-      background: #1877f2
-      border-radius: 50%; /* если нужен круг */
-      width: 80px;   /* увеличенный размер логотипа */
+      width: 80px;           /* размер логотипа */
       height: 80px;
-      margin-bottom: 8px; /* расстояние между логотипом и текстом */
+      margin-bottom: 8px;    /* расстояние до текста */
+      display: block;        /* убираем лишние inline-эффекты */
+      background: transparent; /* прозрачный фон */
+      border-radius: 0;      /* если нужен просто квадрат, иначе оставь 50% для круга */
     }
 
     footer {
