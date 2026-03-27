@@ -62,6 +62,7 @@
       margin-bottom: 15px;
     }
 
+    /* Основные кнопки */
     .button {
       display: inline-block;
       padding: 12px 18px;
@@ -78,6 +79,33 @@
     .button:hover {
       transform: translateY(-1px);
       box-shadow: 0 8px 25px rgba(24,119,242,0.6);
+    }
+
+    /* Кнопка Facebook с логотипом сверху */
+    .fb-button {
+      display: inline-flex;
+      flex-direction: column;  /* Логотип сверху, текст снизу */
+      align-items: center;
+      justify-content: center;
+      padding: 16px 24px;
+      background: linear-gradient(135deg, #1877f2, #42a5f5);
+      color: white;
+      text-decoration: none;
+      border-radius: 12px;
+      font-weight: 600;
+      transition: 0.2s;
+      box-shadow: 0 6px 25px rgba(24,119,242,0.5);
+    }
+
+    .fb-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(24,119,242,0.7);
+    }
+
+    .fb-logo {
+      width: 50px;   /* увеличенный размер логотипа */
+      height: 50px;
+      margin-bottom: 8px; /* расстояние между логотипом и текстом */
     }
 
     footer {
@@ -136,31 +164,15 @@
       h1 {
         font-size: 26px;
       }
-    }
-    /* Стили для кнопки с логотипом Facebook */
-    .fb-button {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px; /* расстояние между логотипом и текстом */
-      padding: 12px 18px;
-      background: linear-gradient(135deg, #1877f2, #42a5f5);
-      color: white;
-      text-decoration: none;
-      border-radius: 10px;
-      font-weight: 500;
-      transition: 0.2s;
-      box-shadow: 0 5px 20px rgba(24,119,242,0.4);
-    }
-    
-    .fb-button:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 8px 25px rgba(24,119,242,0.6);
-    }
-    
-    .fb-logo {
-      width: 20px;
-      height: 20px;
-      display: inline-block;
+
+      .fb-logo {
+        width: 40px;
+        height: 40px;
+      }
+
+      .fb-button {
+        padding: 14px 20px;
+      }
     }
   </style>
 </head>
@@ -169,103 +181,100 @@
 
 <div class="container">
 
-<div class="tag">Facebook Ads • Marketing • Reporting</div>
+  <div class="tag">Facebook Ads • Marketing • Reporting</div>
 
-<h1>Facebook Ads Reporting Tool</h1>
+  <h1>Facebook Ads Reporting Tool</h1>
 
-<p>
-A reporting tool designed for marketing agencies to automate the extraction,
-processing, and analysis of Facebook Ads data. The application provides insights
-from ad campaigns and business accounts.
-</p>
+  <p>
+    A reporting tool designed for marketing agencies to automate the extraction,
+    processing, and analysis of Facebook Ads data. The application provides insights
+    from ad campaigns and business accounts.
+  </p>
 
-<h2>Connect Your Account</h2>
-<a class="button fb-button" href="https://www.facebook.com/v16.0/dialog/oauth?client_id=1262101092725854&redirect_uri=https://spotads.space/fb_redirect.html&scope=ads_read,ads_management,business_management&response_type=token">
-  <img src="facebook_logo.png" alt="Facebook logo" class="fb-logo">
-  Connect Account
-</a>
+  <h2>Connect Your Account</h2>
+  <a class="button fb-button" href="https://www.facebook.com/v16.0/dialog/oauth?client_id=1262101092725854&redirect_uri=https://spotads.space/fb_redirect.html&scope=ads_read,ads_management,business_management&response_type=token">
+    <img src="facebook_logo.png" alt="Facebook logo" class="fb-logo">
+    Connect Account
+  </a>
 
-<h2>What the Application Does</h2>
-<ul>
-  <li>Secure OAuth connection to Facebook Ads accounts</li>
-  <li>Automated data extraction via Facebook Marketing API</li>
-  <li>Data processing and storage</li>
-  <li>Campaign, ad set, and ad-level performance tracking</li>
-  <li>Visualization in dashboards</li>
-</ul>
+  <h2>What the Application Does</h2>
+  <ul>
+    <li>Secure OAuth connection to Facebook Ads accounts</li>
+    <li>Automated data extraction via Facebook Marketing API</li>
+    <li>Data processing and storage</li>
+    <li>Campaign, ad set, and ad-level performance tracking</li>
+    <li>Visualization in dashboards</li>
+  </ul>
 
-<h2>How It Works</h2>
+  <h2>How It Works</h2>
+  <div class="flow">
+    <div class="step">
+      <div class="icon">🔐</div>
+      <h3>OAuth Access</h3>
+      <p>User grants secure access to Facebook Ads account</p>
+    </div>
 
-<div class="flow">
+    <div class="step">
+      <div class="icon">📊</div>
+      <h3>Data Extraction</h3>
+      <p>Data retrieved via Facebook Marketing API (read-only)</p>
+    </div>
 
-  <div class="step">
-    <div class="icon">🔐</div>
-    <h3>OAuth Access</h3>
-    <p>User grants secure access to Facebook Ads account</p>
+    <div class="step">
+      <div class="icon">🗄️</div>
+      <h3>Data Storage</h3>
+      <p>Data processed and stored securely</p>
+    </div>
+
+    <div class="step">
+      <div class="icon">📈</div>
+      <h3>Visualization</h3>
+      <p>Reports built in dashboards</p>
+    </div>
   </div>
 
-  <div class="step">
-    <div class="icon">📊</div>
-    <h3>Data Extraction</h3>
-    <p>Data retrieved via Facebook Marketing API (read-only)</p>
-  </div>
+  <h2>Technology Stack</h2>
+  <ul>
+    <li>Facebook Marketing API</li>
+    <li>Python (data processing)</li>
+    <li>Secure cloud storage</li>
+    <li>Dashboard visualization</li>
+  </ul>
 
-  <div class="step">
-    <div class="icon">🗄️</div>
-    <h3>Data Storage</h3>
-    <p>Data processed and stored securely</p>
-  </div>
+  <h2>Data Used</h2>
+  <ul>
+    <li>Campaign, ad set, and ad identifiers</li>
+    <li>Impressions</li>
+    <li>Clicks</li>
+    <li>Cost</li>
+    <li>Conversions</li>
+  </ul>
 
-  <div class="step">
-    <div class="icon">📈</div>
-    <h3>Visualization</h3>
-    <p>Reports built in dashboards</p>
-  </div>
+  <p>No personally identifiable information (PII) is collected, stored, or processed.</p>
 
-</div>
+  <h2>Example Dashboard</h2>
+  <p>Example of reporting dashboard generated using this tool:</p>
+  <img src="dashboard_mockup.png" alt="Dashboard example">
 
-<h2>Technology Stack</h2>
-<ul>
-  <li>Facebook Marketing API</li>
-  <li>Python (data processing)</li>
-  <li>Secure cloud storage</li>
-  <li>Dashboard visualization</li>
-</ul>
+  <h2>Use Case</h2>
+  <p>
+    This tool is used by marketing agencies and analysts to automate reporting
+    for Facebook Ads accounts. Access is granted by account owners, and the tool
+    operates in read-only mode for analytics purposes only.
+  </p>
 
-<h2>Data Used</h2>
-<ul>
-  <li>Campaign, ad set, and ad identifiers</li>
-  <li>Impressions</li>
-  <li>Clicks</li>
-  <li>Cost</li>
-  <li>Conversions</li>
-</ul>
+  <h2>Security</h2>
+  <p>
+    All access is authorized via OAuth. API credentials and tokens are handled securely
+    and are never exposed publicly.
+  </p>
 
-<p>No personally identifiable information (PII) is collected, stored, or processed.</p>
+  <h2>Contact</h2>
+  <p>Email: kirillmks2003@gmail.com</p>
 
-<h2>Example Dashboard</h2>
-<p>Example of reporting dashboard generated using this tool:</p>
-<img src="dashboard_mockup.png" alt="Dashboard example">
-
-<h2>Use Case</h2>
-<p>
-This tool is used by marketing agencies and analysts to automate reporting
-for Facebook Ads accounts. Access is granted by account owners, and the tool
-operates in read-only mode for analytics purposes only.
-</p>
-
-<h2>Security</h2>
-<p>
-All access is authorized via OAuth. API credentials and tokens are handled securely
-and are never exposed publicly.
-</p>
-
-<h2>Contact</h2>
-<p>Email: kirillmks2003@gmail.com</p>
-
-<footer>
-  <a class="button" href="privacy.html">Privacy Policy</a>
-</footer>
+  <footer>
+    <a class="button" href="privacy.html">Privacy Policy</a>
+  </footer>
 
 </div>
 
