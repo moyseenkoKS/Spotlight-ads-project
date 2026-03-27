@@ -101,9 +101,9 @@
 <h1>Google Ads Reporting Tool</h1>
 
 <p>
-A lightweight internal tool designed to automate the extraction, processing,
-and reporting of Google Ads data for marketing analytics and visualization
-in Looker Studio dashboards.
+A lightweight reporting tool designed for marketing agencies to automate the extraction,
+processing, and reporting of Google Ads data. The application stores structured data
+in BigQuery and provides analytics via Looker Studio dashboards.
 </p>
 
 <h2>What the Application Does</h2>
@@ -111,6 +111,7 @@ in Looker Studio dashboards.
   <li>Secure OAuth connection to Google Ads accounts</li>
   <li>Automated daily data extraction via Google Ads API</li>
   <li>Campaign, ad group, and ad-level performance tracking</li>
+  <li>Data storage and processing in BigQuery</li>
   <li>Structured dataset generation for analytics</li>
   <li>Integration with Looker Studio dashboards</li>
 </ul>
@@ -119,7 +120,7 @@ in Looker Studio dashboards.
 <ol>
   <li>User grants access to their Google Ads account via OAuth</li>
   <li>The application retrieves daily performance data using Google Ads API</li>
-  <li>Data is processed and structured using a Python backend</li>
+  <li>Data is processed and stored in BigQuery</li>
   <li>Processed data is visualized in Looker Studio dashboards</li>
 </ol>
 
@@ -127,8 +128,8 @@ in Looker Studio dashboards.
 <p>
 The application connects to the Google Ads API via secure OAuth authorization.
 Advertising performance data such as impressions, clicks, cost, and conversions
-is retrieved daily. The data is processed internally and structured for reporting
-purposes. Final datasets are visualized using Looker Studio dashboards.
+is retrieved daily. The data is processed and securely stored in BigQuery.
+Processed datasets are then used for analytics and visualization in Looker Studio dashboards.
 </p>
 
 <h2>Data Used</h2>
@@ -151,15 +152,16 @@ Below is an example of a reporting dashboard generated using this tool:
 
 <h2>Use Case</h2>
 <p>
-This tool is used for internal analytics and reporting purposes by marketing
-professionals managing Google Ads accounts. It operates in read-only mode and
-does not create, edit, or optimize advertising campaigns.
+This tool is used by marketing agencies and analysts to automate reporting
+for Google Ads accounts. Access to accounts is granted by account owners,
+and the tool is used solely for analytics and reporting purposes.
 </p>
 
 <h2>Security</h2>
 <p>
 All access is authorized via OAuth. API credentials and tokens are handled securely
-and are never exposed publicly or shared with third parties.
+and are never exposed publicly. Data stored in BigQuery is protected using standard
+cloud security practices and is not shared with unauthorized third parties.
 </p>
 
 <h2>Contact</h2>
