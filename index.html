@@ -2,9 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Spotlight Ads Reporting Tool</title>
+  <title>Google Ads Reporting Tool</title>
 
-  <!-- Inter font -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
   <style>
@@ -41,9 +40,8 @@
       color: #cbd5f5;
     }
 
-    ul {
+    ul, ol {
       padding-left: 20px;
-      color: #e5e7eb;
     }
 
     li {
@@ -84,6 +82,13 @@
       margin-bottom: 15px;
     }
 
+    img {
+      width: 100%;
+      border-radius: 12px;
+      margin-top: 15px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+
   </style>
 </head>
 
@@ -93,43 +98,68 @@
 
 <div class="tag">Google Ads • Automation • Reporting</div>
 
-<h1> Ads Reporting Tool</h1>
+<h1>Google Ads Reporting Tool</h1>
 
 <p>
-A lightweight internal tool designed to automate the extraction,
-processing, and reporting of Ads data for use in Looker Studio dashboards.
+A lightweight internal tool designed to automate the extraction, processing,
+and reporting of Google Ads data for marketing analytics and visualization
+in Looker Studio dashboards.
 </p>
 
 <h2>What the Application Does</h2>
 <ul>
-  <li>Secure OAuth connection to Ads accounts</li>
-  <li>Automated daily data extraction</li>
+  <li>Secure OAuth connection to Google Ads accounts</li>
+  <li>Automated daily data extraction via Google Ads API</li>
   <li>Campaign, ad group, and ad-level performance tracking</li>
   <li>Structured dataset generation for analytics</li>
-  <li>Integration with Looker Studio for visualization</li>
+  <li>Integration with Looker Studio dashboards</li>
 </ul>
+
+<h2>How It Works</h2>
+<ol>
+  <li>User grants access to their Google Ads account via OAuth</li>
+  <li>The application retrieves daily performance data using Google Ads API</li>
+  <li>Data is processed and structured using a Python backend</li>
+  <li>Processed data is visualized in Looker Studio dashboards</li>
+</ol>
+
+<h2>Data Flow</h2>
+<p>
+The application connects to the Google Ads API via secure OAuth authorization.
+Advertising performance data such as impressions, clicks, cost, and conversions
+is retrieved daily. The data is processed internally and structured for reporting
+purposes. Final datasets are visualized using Looker Studio dashboards.
+</p>
 
 <h2>Data Used</h2>
-<p>
-The application accesses only advertising performance data:
-</p>
 <ul>
   <li>Campaign and ad identifiers</li>
-  <li>Impressions, clicks, cost, and conversions</li>
+  <li>Impressions</li>
+  <li>Clicks</li>
+  <li>Cost</li>
+  <li>Conversions</li>
 </ul>
 
-<p>No personal user data is collected, stored, or processed.</p>
+<p>No personally identifiable information (PII) is collected, stored, or processed.</p>
+
+<h2>Example Dashboard</h2>
+<p>
+Below is an example of a reporting dashboard generated using this tool:
+</p>
+
+<img src="dashboard.png" alt="Dashboard example">
 
 <h2>Use Case</h2>
 <p>
-This tool is intended for internal analytics or for marketing professionals
-managing advertising accounts and generating performance reports.
+This tool is used for internal analytics and reporting purposes by marketing
+professionals managing Google Ads accounts. It operates in read-only mode and
+does not create, edit, or optimize advertising campaigns.
 </p>
 
 <h2>Security</h2>
 <p>
 All access is authorized via OAuth. API credentials and tokens are handled securely
-and never shared with third parties.
+and are never exposed publicly or shared with third parties.
 </p>
 
 <h2>Contact</h2>
