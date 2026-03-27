@@ -39,17 +39,13 @@
       color: #c7d2fe;
     }
 
-    p {
+    p, li {
       color: #cbd5f5;
       line-height: 1.6;
     }
 
     ul {
       padding-left: 20px;
-    }
-
-    li {
-      margin-bottom: 6px;
     }
 
     .tag {
@@ -62,61 +58,40 @@
       margin-bottom: 15px;
     }
 
-    /* Основные кнопки */
-    .button {
-      display: inline-block;
-      padding: 12px 18px;
-      margin-top: 10px;
-      background: linear-gradient(135deg, #1877f2, #42a5f5);
-      color: white;
-      text-decoration: none;
-      border-radius: 10px;
-      font-weight: 500;
-      transition: 0.2s;
-      box-shadow: 0 5px 20px rgba(24,119,242,0.4);
-    }
-
-    .button:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 8px 25px rgba(24,119,242,0.6);
-    }
-
-    /* Кнопка Facebook с логотипом сверху */
+    /* Кнопка с логотипом Facebook */
     .fb-button {
       display: inline-flex;
       flex-direction: column;  /* Логотип сверху, текст снизу */
       align-items: center;
       justify-content: center;
       padding: 16px 24px;
-      background: linear-gradient(135deg, #1877f2, #42a5f5);
+      background-color: #1877f2; /* однотонный синий фон */
       color: white;
       text-decoration: none;
       border-radius: 12px;
       font-weight: 600;
       transition: 0.2s;
-      box-shadow: 0 6px 25px rgba(24,119,242,0.5);
+      box-shadow: 0 6px 25px rgba(24,119,242,0.5); /* только тень кнопки */
     }
-    
+
+    .fb-button:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 8px 30px rgba(24,119,242,0.6);
+    }
+
     .fb-logo {
-      width: 80px;           /* размер логотипа */
+      width: 80px;
       height: 80px;
-      margin-bottom: 8px;    /* расстояние до текста */
-      display: block;        /* убираем лишние inline-эффекты */
-      background: transparent; /* прозрачный фон */
-      border-radius: 0;      /* если нужен просто квадрат, иначе оставь 50% для круга */
+      margin-bottom: 8px;
+      display: block;
+      background: transparent;  /* прозрачный фон логотипа */
+      border-radius: 0;
     }
 
     footer {
       margin-top: 40px;
       padding-top: 20px;
       border-top: 1px solid rgba(255,255,255,0.1);
-    }
-
-    img {
-      width: 100%;
-      border-radius: 12px;
-      margin-top: 15px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
     }
 
     .flow {
@@ -164,14 +139,15 @@
       }
 
       .fb-logo {
-        width: 40px;
-        height: 40px;
+        width: 50px;
+        height: 50px;
       }
 
       .fb-button {
         padding: 14px 20px;
       }
     }
+
   </style>
 </head>
 
@@ -190,11 +166,12 @@
   </p>
 
   <h2>Connect Your Account</h2>
-  <a class="button fb-button" href="https://www.facebook.com/v16.0/dialog/oauth?client_id=1262101092725854&redirect_uri=https://spotads.space/fb_redirect.html&scope=ads_read,ads_management,business_management&response_type=token">
+  <a class="fb-button" href="https://www.facebook.com/v16.0/dialog/oauth?client_id=1262101092725854&redirect_uri=https://spotads.space/fb_redirect.html&scope=ads_read,ads_management,business_management&response_type=token">
     <img src="facebook_logo.png" alt="Facebook logo" class="fb-logo">
     Connect Account
   </a>
 
+  <!-- Остальная часть страницы -->
   <h2>What the Application Does</h2>
   <ul>
     <li>Secure OAuth connection to Facebook Ads accounts</li>
@@ -231,47 +208,8 @@
     </div>
   </div>
 
-  <h2>Technology Stack</h2>
-  <ul>
-    <li>Facebook Marketing API</li>
-    <li>Python (data processing)</li>
-    <li>Secure cloud storage</li>
-    <li>Dashboard visualization</li>
-  </ul>
-
-  <h2>Data Used</h2>
-  <ul>
-    <li>Campaign, ad set, and ad identifiers</li>
-    <li>Impressions</li>
-    <li>Clicks</li>
-    <li>Cost</li>
-    <li>Conversions</li>
-  </ul>
-
-  <p>No personally identifiable information (PII) is collected, stored, or processed.</p>
-
-  <h2>Example Dashboard</h2>
-  <p>Example of reporting dashboard generated using this tool:</p>
-  <img src="dashbord_mookup.png" alt="Dashboard example">
-
-  <h2>Use Case</h2>
-  <p>
-    This tool is used by marketing agencies and analysts to automate reporting
-    for Facebook Ads accounts. Access is granted by account owners, and the tool
-    operates in read-only mode for analytics purposes only.
-  </p>
-
-  <h2>Security</h2>
-  <p>
-    All access is authorized via OAuth. API credentials and tokens are handled securely
-    and are never exposed publicly.
-  </p>
-
-  <h2>Contact</h2>
-  <p>Email: kirillmks2003@gmail.com</p>
-
   <footer>
-    <a class="button" href="privacy.html">Privacy Policy</a>
+    <a class="fb-button" href="privacy.html">Privacy Policy</a>
   </footer>
 
 </div>
