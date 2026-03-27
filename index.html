@@ -89,6 +89,45 @@
       box-shadow: 0 10px 30px rgba(0,0,0,0.5);
     }
 
+    .flow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.step {
+  flex: 1;
+  min-width: 180px;
+  background: rgba(30, 41, 59, 0.6);
+  padding: 20px;
+  border-radius: 14px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+}
+
+.step h3 {
+  margin: 10px 0 5px;
+  font-size: 16px;
+  color: #c7d2fe;
+}
+
+.step p {
+  font-size: 13px;
+  color: #94a3b8;
+}
+
+.icon {
+  font-size: 28px;
+}
+
+.arrow {
+  font-size: 24px;
+  color: #6366f1;
+}
+
   </style>
 </head>
 
@@ -117,12 +156,39 @@ in BigQuery and provides analytics via Looker Studio dashboards.
 </ul>
 
 <h2>How It Works</h2>
-<ol>
-  <li>User grants access to their Google Ads account via OAuth</li>
-  <li>The application retrieves daily performance data using Google Ads API</li>
-  <li>Data is processed and stored in BigQuery</li>
-  <li>Processed data is visualized in Looker Studio dashboards</li>
-</ol>
+<div class="flow">
+
+  <div class="step">
+    <div class="icon">🔐</div>
+    <h3>OAuth Access</h3>
+    <p>User grants secure access to Google Ads account</p>
+  </div>
+
+  <div class="arrow">→</div>
+
+  <div class="step">
+    <div class="icon">📊</div>
+    <h3>Data Extraction</h3>
+    <p>Data retrieved via Google Ads API</p>
+  </div>
+
+  <div class="arrow">→</div>
+
+  <div class="step">
+    <div class="icon">🗄️</div>
+    <h3>BigQuery Storage</h3>
+    <p>Data processed and stored securely</p>
+  </div>
+
+  <div class="arrow">→</div>
+
+  <div class="step">
+    <div class="icon">📈</div>
+    <h3>Visualization</h3>
+    <p>Reports built in Looker Studio</p>
+  </div>
+
+</div>
 
 <h2>Data Flow</h2>
 <p>
