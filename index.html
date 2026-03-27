@@ -4,6 +4,9 @@
   <meta charset="UTF-8">
   <title>Google Ads Reporting Tool</title>
 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Inter font -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
   <style>
@@ -16,8 +19,8 @@
 
     .container {
       max-width: 900px;
-      margin: 60px auto;
-      padding: 40px;
+      margin: 40px auto;
+      padding: 30px;
       background: rgba(15, 23, 42, 0.85);
       border-radius: 16px;
       box-shadow: 0 20px 50px rgba(0,0,0,0.6);
@@ -25,7 +28,7 @@
     }
 
     h1 {
-      font-size: 34px;
+      font-size: 32px;
       margin-bottom: 10px;
       color: #ffffff;
     }
@@ -38,14 +41,25 @@
 
     p {
       color: #cbd5f5;
+      line-height: 1.6;
     }
 
-    ul, ol {
+    ul {
       padding-left: 20px;
     }
 
     li {
       margin-bottom: 6px;
+    }
+
+    .tag {
+      display: inline-block;
+      background: rgba(99,102,241,0.15);
+      color: #a5b4fc;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      margin-bottom: 15px;
     }
 
     .button {
@@ -72,16 +86,6 @@
       border-top: 1px solid rgba(255,255,255,0.1);
     }
 
-    .tag {
-      display: inline-block;
-      background: rgba(99,102,241,0.15);
-      color: #a5b4fc;
-      padding: 4px 10px;
-      border-radius: 999px;
-      font-size: 12px;
-      margin-bottom: 15px;
-    }
-
     img {
       width: 100%;
       border-radius: 12px;
@@ -89,44 +93,54 @@
       box-shadow: 0 10px 30px rgba(0,0,0,0.5);
     }
 
+    /* 🔥 HOW IT WORKS GRID */
+
     .flow {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 10px;
-  flex-wrap: wrap;
-  margin-top: 20px;
-}
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+      margin-top: 20px;
+    }
 
-.step {
-  flex: 1;
-  min-width: 180px;
-  background: rgba(30, 41, 59, 0.6);
-  padding: 20px;
-  border-radius: 14px;
-  text-align: center;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
-}
+    .step {
+      background: rgba(30, 41, 59, 0.6);
+      padding: 20px;
+      border-radius: 14px;
+      text-align: center;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+      transition: 0.2s;
+    }
 
-.step h3 {
-  margin: 10px 0 5px;
-  font-size: 16px;
-  color: #c7d2fe;
-}
+    .step:hover {
+      transform: translateY(-3px);
+    }
 
-.step p {
-  font-size: 13px;
-  color: #94a3b8;
-}
+    .step h3 {
+      margin: 10px 0 5px;
+      font-size: 16px;
+      color: #c7d2fe;
+    }
 
-.icon {
-  font-size: 28px;
-}
+    .step p {
+      font-size: 13px;
+      color: #94a3b8;
+    }
 
-.arrow {
-  font-size: 24px;
-  color: #6366f1;
-}
+    .icon {
+      font-size: 28px;
+    }
+
+    /* 📱 MOBILE */
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 20px;
+      }
+
+      h1 {
+        font-size: 26px;
+      }
+    }
 
   </style>
 </head>
@@ -135,27 +149,27 @@
 
 <div class="container">
 
-<div class="tag">Google Ads • Automation • Reporting</div>
+<div class="tag">Google Ads • BigQuery • Reporting</div>
 
 <h1>Google Ads Reporting Tool</h1>
 
 <p>
-A lightweight reporting tool designed for marketing agencies to automate the extraction,
-processing, and reporting of Google Ads data. The application stores structured data
-in BigQuery and provides analytics via Looker Studio dashboards.
+A reporting tool designed for marketing agencies to automate the extraction,
+processing, and analysis of Google Ads data. The application stores structured data
+in BigQuery and provides insights via Looker Studio dashboards.
 </p>
 
 <h2>What the Application Does</h2>
 <ul>
   <li>Secure OAuth connection to Google Ads accounts</li>
   <li>Automated daily data extraction via Google Ads API</li>
+  <li>Data processing and storage in BigQuery</li>
   <li>Campaign, ad group, and ad-level performance tracking</li>
-  <li>Data storage and processing in BigQuery</li>
-  <li>Structured dataset generation for analytics</li>
-  <li>Integration with Looker Studio dashboards</li>
+  <li>Visualization in Looker Studio dashboards</li>
 </ul>
 
 <h2>How It Works</h2>
+
 <div class="flow">
 
   <div class="step">
@@ -164,23 +178,17 @@ in BigQuery and provides analytics via Looker Studio dashboards.
     <p>User grants secure access to Google Ads account</p>
   </div>
 
-  <div class="arrow">→</div>
-
   <div class="step">
     <div class="icon">📊</div>
     <h3>Data Extraction</h3>
-    <p>Data retrieved via Google Ads API</p>
+    <p>Data retrieved via Google Ads API (read-only)</p>
   </div>
-
-  <div class="arrow">→</div>
 
   <div class="step">
     <div class="icon">🗄️</div>
     <h3>BigQuery Storage</h3>
     <p>Data processed and stored securely</p>
   </div>
-
-  <div class="arrow">→</div>
 
   <div class="step">
     <div class="icon">📈</div>
@@ -198,6 +206,14 @@ is retrieved daily. The data is processed and securely stored in BigQuery.
 Processed datasets are then used for analytics and visualization in Looker Studio dashboards.
 </p>
 
+<h2>Technology Stack</h2>
+<ul>
+  <li>Google Ads API</li>
+  <li>Python (data processing)</li>
+  <li>BigQuery (data storage)</li>
+  <li>Looker Studio (visualization)</li>
+</ul>
+
 <h2>Data Used</h2>
 <ul>
   <li>Campaign and ad identifiers</li>
@@ -210,24 +226,22 @@ Processed datasets are then used for analytics and visualization in Looker Studi
 <p>No personally identifiable information (PII) is collected, stored, or processed.</p>
 
 <h2>Example Dashboard</h2>
-<p>
-Below is an example of a reporting dashboard generated using this tool:
-</p>
+<p>Example of reporting dashboard generated using this tool:</p>
 
 <img src="dashbord_mookup.png" alt="Dashboard example">
 
 <h2>Use Case</h2>
 <p>
 This tool is used by marketing agencies and analysts to automate reporting
-for Google Ads accounts. Access to accounts is granted by account owners,
-and the tool is used solely for analytics and reporting purposes.
+for Google Ads accounts. Access is granted by account owners, and the tool
+operates in read-only mode for analytics purposes only.
 </p>
 
 <h2>Security</h2>
 <p>
 All access is authorized via OAuth. API credentials and tokens are handled securely
 and are never exposed publicly. Data stored in BigQuery is protected using standard
-cloud security practices and is not shared with unauthorized third parties.
+cloud security practices.
 </p>
 
 <h2>Contact</h2>
