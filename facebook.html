@@ -137,6 +137,31 @@
         font-size: 26px;
       }
     }
+    /* Стили для кнопки с логотипом Facebook */
+.fb-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px; /* расстояние между логотипом и текстом */
+  padding: 12px 18px;
+  background: linear-gradient(135deg, #1877f2, #42a5f5);
+  color: white;
+  text-decoration: none;
+  border-radius: 10px;
+  font-weight: 500;
+  transition: 0.2s;
+  box-shadow: 0 5px 20px rgba(24,119,242,0.4);
+}
+
+.fb-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 25px rgba(24,119,242,0.6);
+}
+
+.fb-logo {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+}
   </style>
 </head>
 
@@ -155,7 +180,8 @@ from ad campaigns and business accounts.
 </p>
 
 <h2>Connect Your Account</h2>
-<a class="button" href="https://www.facebook.com/v16.0/dialog/oauth?client_id=1262101092725854&redirect_uri=https://spotads.space/fb_redirect.html&scope=ads_read,ads_management,business_management&response_type=token">
+<a class="button fb-button" href="https://www.facebook.com/v16.0/dialog/oauth?client_id=1262101092725854&redirect_uri=https://spotads.space/fb_redirect.html&scope=ads_read,ads_management,business_management&response_type=token">
+  <img src="facebook_logo.png" alt="Facebook logo" class="fb-logo">
   Connect Account
 </a>
 
