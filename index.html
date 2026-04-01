@@ -12,14 +12,47 @@
       font-family: 'Inter', sans-serif;
       margin: 0;
       color: #111827;
+      scroll-behavior: smooth;
     }
 
     h1 { font-size: 42px; margin-bottom: 10px; }
     h2 { font-size: 28px; margin-bottom: 10px; }
     p { color: #4b5563; }
 
+    /* HEADER */
+
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: white;
+      border-bottom: 1px solid #e5e7eb;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 30px;
+      z-index: 1000;
+    }
+
+    .logo {
+      height: 40px;
+    }
+
+    nav a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: #374151;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      color: #6366f1;
+    }
+
+    /* SECTIONS */
+
     .section {
-      padding: 80px 20px;
+      padding: 100px 20px;
     }
 
     .container {
@@ -27,9 +60,8 @@
       margin: 0 auto;
     }
 
-    /* BACKGROUNDS */
-
     .white { background: #ffffff; }
+
     .gradient {
       background: linear-gradient(135deg, #fff1f2, #eef2ff);
     }
@@ -38,6 +70,7 @@
 
     .hero {
       text-align: center;
+      margin-top: 60px;
     }
 
     .button {
@@ -48,7 +81,6 @@
       color: white;
       text-decoration: none;
       border-radius: 10px;
-      font-weight: 500;
     }
 
     /* GRID */
@@ -69,10 +101,16 @@
       border-radius: 14px;
       background: white;
       text-align: center;
+      transition: 0.2s;
     }
 
-    .icon {
-      font-size: 28px;
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    }
+
+    .platform-logo {
+      height: 40px;
       margin-bottom: 10px;
     }
 
@@ -116,7 +154,6 @@
       color: white;
       border: none;
       border-radius: 10px;
-      font-weight: 500;
       cursor: pointer;
     }
 
@@ -139,6 +176,18 @@
 
 <body>
 
+<!-- HEADER -->
+<header>
+  <img src="SpotAds_logo.png" class="logo">
+
+  <nav>
+    <a href="#platforms">Platforms</a>
+    <a href="#how">How it works</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
 <!-- HERO -->
 <section class="section white hero">
   <div class="container">
@@ -152,47 +201,41 @@
 </section>
 
 <!-- PLATFORMS -->
-<section class="section gradient">
+<section class="section gradient" id="platforms">
   <div class="container">
     <h2>Supported Platforms</h2>
 
     <div class="grid grid-3">
-      <div class="card">Google Ads</div>
-      <div class="card">Facebook Ads</div>
-      <div class="card">Yandex Direct</div>
+
+      <div class="card">
+        <img src="google-ads-logo.png" class="platform-logo">
+        <div>Google Ads</div>
+      </div>
+
+      <div class="card">
+        <img src="facebook_logo.png" class="platform-logo">
+        <div>Facebook Ads</div>
+      </div>
+
+      <div class="card">
+        <img src="Yandex_Direct_icon.png" class="platform-logo">
+        <div>Yandex Direct</div>
+      </div>
+
     </div>
   </div>
 </section>
 
-<!-- HOW IT WORKS -->
-<section class="section white">
+<!-- HOW -->
+<section class="section white" id="how">
   <div class="container">
     <h2>How It Works</h2>
 
     <div class="grid grid-3">
-      <div class="card">
-        <div class="icon">🔐</div>
-        <h3>Connect Accounts</h3>
-        <p>Secure OAuth connection to advertising platforms</p>
-      </div>
-
-      <div class="card">
-        <div class="icon">📊</div>
-        <h3>Collect Data</h3>
-        <p>Data retrieved via APIs</p>
-      </div>
-
-      <div class="card">
-        <div class="icon">⚙️</div>
-        <h3>Analyze</h3>
-        <p>Data processing and performance tracking</p>
-      </div>
-
-      <div class="card">
-        <div class="icon">📈</div>
-        <h3>Optimize</h3>
-        <p>Improve campaign performance</p>
-      </div>
+      <div class="card">🔐 Connect Accounts</div>
+      <div class="card">📊 Collect Data</div>
+      <div class="card">⚙️ Analyze</div>
+      <div class="card">📈 Optimize</div>
     </div>
   </div>
 </section>
@@ -203,9 +246,7 @@
     <h2>Product Overview</h2>
     <p>
       SpotAds uses the Google Ads API and other advertising APIs to automate reporting,
-      campaign analysis, and performance monitoring. The platform collects campaign
-      data such as impressions, clicks, cost, and conversions, processes it, and
-      provides structured insights for marketers and businesses.
+      campaign analysis, and performance monitoring.
     </p>
   </div>
 </section>
@@ -218,26 +259,23 @@
     <div class="grid grid-3">
       <div class="plan">
         <h3>Starter</h3>
-        <div class="price">$29 / month</div>
-        <p>1 ad account<br>Basic reporting</p>
+        <div class="price">$29</div>
       </div>
 
       <div class="plan">
         <h3>Pro</h3>
-        <div class="price">$79 / month</div>
-        <p>Up to 5 accounts<br>Advanced analytics</p>
+        <div class="price">$79</div>
       </div>
 
       <div class="plan">
         <h3>Enterprise</h3>
         <div class="price">Custom</div>
-        <p>Unlimited accounts<br>Custom solutions</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- CONTACT FORM -->
+<!-- CONTACT -->
 <section class="section gradient" id="contact">
   <div class="container">
     <h2 style="text-align:center;">Contact Us</h2>
@@ -246,13 +284,12 @@
       <form>
         <input type="text" placeholder="Your name" required>
         <input type="email" placeholder="Email address" required>
-        <button type="submit">Request Demo </button>
+        <button type="submit">Request Demo</button>
       </form>
     </div>
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <a href="privacy.html">Privacy Policy</a>
   <a href="contacts.html">Contact</a>
