@@ -11,35 +11,33 @@
     body {
       font-family: 'Inter', sans-serif;
       margin: 0;
-      background: #ffffff;
       color: #111827;
     }
 
+    h1 { font-size: 42px; margin-bottom: 10px; }
+    h2 { font-size: 28px; margin-bottom: 10px; }
+    p { color: #4b5563; }
+
+    .section {
+      padding: 80px 20px;
+    }
+
     .container {
-      width: 100%;
-      max-width: 1200px;
+      max-width: 1100px;
       margin: 0 auto;
-      padding: 40px 20px;
     }
 
-    h1 {
-      font-size: 42px;
-      margin-bottom: 10px;
+    /* BACKGROUNDS */
+
+    .white { background: #ffffff; }
+    .gradient {
+      background: linear-gradient(135deg, #fff1f2, #eef2ff);
     }
 
-    h2 {
-      margin-top: 60px;
-      font-size: 28px;
-    }
-
-    p {
-      color: #4b5563;
-      line-height: 1.6;
-    }
+    /* HERO */
 
     .hero {
       text-align: center;
-      padding: 80px 20px 40px;
     }
 
     .button {
@@ -53,56 +51,38 @@
       font-weight: 500;
     }
 
-    /* PLATFORMS */
+    /* GRID */
 
-    .platforms {
+    .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 20px;
       margin-top: 30px;
     }
 
-    .platform {
-      border: 1px solid #e5e7eb;
-      padding: 25px;
-      border-radius: 12px;
-      text-align: center;
-      font-weight: 500;
-    }
-
-    /* HOW IT WORKS */
-
-    .flow {
-      display: grid;
+    .grid-3 {
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
-      margin-top: 30px;
     }
 
-    .step {
+    .card {
       border: 1px solid #e5e7eb;
       padding: 25px;
-      border-radius: 12px;
+      border-radius: 14px;
+      background: white;
       text-align: center;
     }
 
     .icon {
       font-size: 28px;
+      margin-bottom: 10px;
     }
 
     /* PRICING */
 
-    .pricing {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 20px;
-      margin-top: 30px;
-    }
-
     .plan {
-      border: 1px solid #e5e7eb;
       padding: 30px;
       border-radius: 14px;
+      border: 1px solid #e5e7eb;
+      background: white;
     }
 
     .price {
@@ -110,15 +90,42 @@
       margin: 15px 0;
     }
 
-    ul {
-      padding-left: 20px;
+    /* FORM */
+
+    .form-box {
+      max-width: 500px;
+      margin: 0 auto;
+      background: white;
+      padding: 30px;
+      border-radius: 14px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
     }
 
+    input {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 12px;
+      border-radius: 8px;
+      border: 1px solid #e5e7eb;
+    }
+
+    button {
+      width: 100%;
+      padding: 14px;
+      background: #6366f1;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-weight: 500;
+      cursor: pointer;
+    }
+
+    /* FOOTER */
+
     footer {
-      margin-top: 80px;
+      text-align: center;
       padding: 40px 20px;
       border-top: 1px solid #e5e7eb;
-      text-align: center;
     }
 
     footer a {
@@ -132,100 +139,120 @@
 
 <body>
 
-<div class="hero">
-  <h1>SpotAds Platform</h1>
-  <p>
-    AI-powered platform for automating and optimizing advertising campaigns
-    across multiple ad networks including Google Ads.
-  </p>
-  <a href="#pricing" class="button">Get Started</a>
-</div>
-
-<div class="container">
-
-  <h2>Supported Platforms</h2>
-
-  <div class="platforms">
-    <div class="platform">Google Ads</div>
-    <div class="platform">Facebook Ads</div>
-    <div class="platform">Yandex Direct</div>
+<!-- HERO -->
+<section class="section white hero">
+  <div class="container">
+    <h1>SpotAds Platform</h1>
+    <p>
+      Platform for automating and optimizing advertising campaigns
+      across Google Ads and other ad networks.
+    </p>
+    <a href="#contact" class="button">Get Early Access</a>
   </div>
+</section>
 
-  <h2>How It Works</h2>
+<!-- PLATFORMS -->
+<section class="section gradient">
+  <div class="container">
+    <h2>Supported Platforms</h2>
 
-  <div class="flow">
-    <div class="step">
-      <div class="icon">🔐</div>
-      <h3>Connect Accounts</h3>
-      <p>Secure OAuth connection to ad platforms</p>
-    </div>
-
-    <div class="step">
-      <div class="icon">📊</div>
-      <h3>Collect Data</h3>
-      <p>Data retrieved via advertising APIs</p>
-    </div>
-
-    <div class="step">
-      <div class="icon">⚙️</div>
-      <h3>Process & Analyze</h3>
-      <p>Automated analysis and optimization</p>
-    </div>
-
-    <div class="step">
-      <div class="icon">📈</div>
-      <h3>Improve Performance</h3>
-      <p>Better ROI and campaign efficiency</p>
+    <div class="grid grid-3">
+      <div class="card">Google Ads</div>
+      <div class="card">Facebook Ads</div>
+      <div class="card">Yandex Direct</div>
     </div>
   </div>
+</section>
 
-  <h2>Product Overview</h2>
-  <p>
-    SpotAds uses the Google Ads API and other advertising APIs to automate reporting,
-    campaign analysis, and performance optimization. The platform collects campaign
-    data such as impressions, clicks, cost, and conversions, processes it, and provides
-    actionable insights for marketers and businesses.
-  </p>
+<!-- HOW IT WORKS -->
+<section class="section white">
+  <div class="container">
+    <h2>How It Works</h2>
 
-  <h2 id="pricing">Pricing</h2>
+    <div class="grid grid-3">
+      <div class="card">
+        <div class="icon">🔐</div>
+        <h3>Connect Accounts</h3>
+        <p>Secure OAuth connection to advertising platforms</p>
+      </div>
 
-  <div class="pricing">
-    <div class="plan">
-      <h3>Starter</h3>
-      <div class="price">$29 / month</div>
-      <ul>
-        <li>1 ad account</li>
-        <li>Basic reporting</li>
-        <li>Email support</li>
-      </ul>
-    </div>
+      <div class="card">
+        <div class="icon">📊</div>
+        <h3>Collect Data</h3>
+        <p>Data retrieved via APIs</p>
+      </div>
 
-    <div class="plan">
-      <h3>Pro</h3>
-      <div class="price">$79 / month</div>
-      <ul>
-        <li>Up to 5 ad accounts</li>
-        <li>Advanced analytics</li>
-        <li>Automation tools</li>
-      </ul>
-    </div>
+      <div class="card">
+        <div class="icon">⚙️</div>
+        <h3>Analyze</h3>
+        <p>Data processing and performance tracking</p>
+      </div>
 
-    <div class="plan">
-      <h3>Enterprise</h3>
-      <div class="price">Custom</div>
-      <ul>
-        <li>Unlimited accounts</li>
-        <li>Custom integrations</li>
-        <li>Priority support</li>
-      </ul>
+      <div class="card">
+        <div class="icon">📈</div>
+        <h3>Optimize</h3>
+        <p>Improve campaign performance</p>
+      </div>
     </div>
   </div>
+</section>
 
-  <h2>Contact</h2>
-  <p>Email: kirillmks2003@gmail.com</p>
+<!-- PRODUCT -->
+<section class="section gradient">
+  <div class="container">
+    <h2>Product Overview</h2>
+    <p>
+      SpotAds uses the Google Ads API and other advertising APIs to automate reporting,
+      campaign analysis, and performance monitoring. The platform collects campaign
+      data such as impressions, clicks, cost, and conversions, processes it, and
+      provides structured insights for marketers and businesses.
+    </p>
+  </div>
+</section>
 
-</div>
+<!-- PRICING -->
+<section class="section white" id="pricing">
+  <div class="container">
+    <h2>Pricing</h2>
 
+    <div class="grid grid-3">
+      <div class="plan">
+        <h3>Starter</h3>
+        <div class="price">$29 / month</div>
+        <p>1 ad account<br>Basic reporting</p>
+      </div>
+
+      <div class="plan">
+        <h3>Pro</h3>
+        <div class="price">$79 / month</div>
+        <p>Up to 5 accounts<br>Advanced analytics</p>
+      </div>
+
+      <div class="plan">
+        <h3>Enterprise</h3>
+        <div class="price">Custom</div>
+        <p>Unlimited accounts<br>Custom solutions</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT FORM -->
+<section class="section gradient" id="contact">
+  <div class="container">
+    <h2 style="text-align:center;">Get Early Access</h2>
+
+    <div class="form-box">
+      <form>
+        <input type="text" placeholder="Your name" required>
+        <input type="email" placeholder="Email address" required>
+        <button type="submit">Request Access</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
 <footer>
   <a href="privacy.html">Privacy Policy</a>
   <a href="contacts.html">Contact</a>
