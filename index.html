@@ -20,7 +20,6 @@
     p { color: #4b5563; }
 
     /* HEADER */
-
     header {
       position: fixed;
       top: 0;
@@ -28,10 +27,16 @@
       background: white;
       border-bottom: 1px solid #e5e7eb;
       display: flex;
-      justify-content: space-between;
+      justify-content: space-between; /* лого и навигация слева, кнопка справа */
       align-items: center;
-      padding: 10px 30px;
+      padding: 10px 50px; /* шире */
       z-index: 1000;
+      box-sizing: border-box;
+    }
+
+    .header-left {
+      display: flex;
+      align-items: center;
     }
 
     .logo {
@@ -49,8 +54,22 @@
       color: #6366f1;
     }
 
-    /* SECTIONS */
+    /* Новая кнопка Contact Us */
+    .contact-button {
+      padding: 12px 26px;
+      background: #f472b6; /* розовый */
+      color: white;
+      border-radius: 50px; /* овал */
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.2s;
+    }
 
+    .contact-button:hover {
+      background: #ec4899;
+    }
+
+    /* SECTIONS */
     .section {
       padding: 100px 20px;
     }
@@ -61,13 +80,9 @@
     }
 
     .white { background: #ffffff; }
-
-    .gradient {
-      background: linear-gradient(135deg, #fff1f2, #eef2ff);
-    }
+    .gradient { background: linear-gradient(135deg, #fff1f2, #eef2ff); }
 
     /* HERO */
-
     .hero {
       text-align: center;
       margin-top: 60px;
@@ -84,7 +99,6 @@
     }
 
     /* GRID */
-
     .grid {
       display: grid;
       gap: 20px;
@@ -115,7 +129,6 @@
     }
 
     /* PRICING */
-
     .plan {
       padding: 30px;
       border-radius: 14px;
@@ -129,7 +142,6 @@
     }
 
     /* FORM */
-
     .form-box {
       max-width: 500px;
       margin: 0 auto;
@@ -158,7 +170,6 @@
     }
 
     /* FOOTER */
-
     footer {
       text-align: center;
       padding: 40px 20px;
@@ -178,14 +189,15 @@
 
 <!-- HEADER -->
 <header>
-  <img src="SpotAds_logo.png" class="logo">
-
-  <nav>
-    <a href="#platforms">Platforms</a>
-    <a href="#how">How it works</a>
-    <a href="#pricing">Pricing</a>
-    <a href="#contact">Contact</a>
-  </nav>
+  <div class="header-left">
+    <img src="SpotAds_logo.png" class="logo">
+    <nav>
+      <a href="#platforms">Platforms</a>
+      <a href="#how">How it works</a>
+      <a href="#pricing">Pricing</a>
+    </nav>
+  </div>
+  <a href="#contact" class="contact-button">Contact Us</a>
 </header>
 
 <!-- HERO -->
@@ -206,22 +218,18 @@
     <h2>Supported Platforms</h2>
 
     <div class="grid grid-3">
-
       <div class="card">
         <img src="google-ads-logo.png" class="platform-logo">
         <div>Google Ads</div>
       </div>
-
       <div class="card">
         <img src="facebook_logo.png" class="platform-logo">
         <div>Facebook Ads</div>
       </div>
-
       <div class="card">
         <img src="Yandex_Direct_icon.png" class="platform-logo">
         <div>Yandex Direct</div>
       </div>
-
     </div>
   </div>
 </section>
@@ -274,13 +282,11 @@
         <div class="price">$29</div>
         <p>Ideal for small businesses. Includes basic campaign tracking, reporting, and simple optimization features.</p>
       </div>
-
       <div class="plan">
         <h3>Pro</h3>
         <div class="price">$79</div>
         <p>Designed for growing businesses. Offers advanced analytics, automated recommendations, and multi-platform management.</p>
       </div>
-
       <div class="plan">
         <h3>Enterprise</h3>
         <div class="price">Custom</div>
