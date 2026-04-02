@@ -144,18 +144,20 @@
     .form-box {
       width: 70%;
       max-width: 600px;
-      margin: 0 auto;
+      margin: 0 auto;         /* центрирование form-box на странице */
       background: white;
       padding: 30px;
       border-radius: 14px;
       box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      text-align: center;      /* делает выравнивание inline-блоков по центру (опционально) */
     }
     
     .form-box input,
     .form-box button {
       width: 70%;
-      padding: 12px;      /* для button можно 14px оставить отдельно */
-      margin-bottom: 12px;
+      padding: 12px;  
+      margin: 0 auto 12px auto; 
+      display: block;         
       border-radius: 8px;
       border: 1px solid #e5e7eb;
     }
