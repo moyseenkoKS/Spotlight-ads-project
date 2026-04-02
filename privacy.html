@@ -11,34 +11,21 @@
     body {
       font-family: 'Inter', sans-serif;
       margin: 0;
-      background: radial-gradient(circle at top, #1f2937, #020617);
-      color: #e5e7eb;
+      color: #111827;
+      scroll-behavior: smooth;
     }
+
+    h1 { font-size: 42px; margin-bottom: 10px; }
+    h2 { font-size: 28px; margin-bottom: 10px; }
+    p { color: #4b5563; }
 
     .container {
       max-width: 900px;
-      margin: 60px auto;
+      margin: 80px auto;
       padding: 40px;
-      background: rgba(15, 23, 42, 0.85);
-      border-radius: 16px;
-      box-shadow: 0 20px 50px rgba(0,0,0,0.6);
-      backdrop-filter: blur(10px);
-    }
-
-    h1 {
-      font-size: 32px;
-      margin-bottom: 10px;
-      color: #ffffff;
-    }
-
-    h2 {
-      margin-top: 30px;
-      font-size: 20px;
-      color: #c7d2fe;
-    }
-
-    p {
-      color: #cbd5f5;
+      background: white;
+      border-radius: 14px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
     }
 
     ul {
@@ -50,29 +37,29 @@
     }
 
     a {
-      color: #a5b4fc;
       text-decoration: none;
     }
 
-    a:hover {
-      text-decoration: underline;
-    }
-
-    .button {
+    a.button {
       display: inline-block;
-      padding: 10px 16px;
+      padding: 12px 26px;
       margin-top: 20px;
-      background: linear-gradient(135deg, #6366f1, #8b5cf6);
+      background: #f472b6;
       color: white;
-      border-radius: 10px;
-      text-decoration: none;
-      font-weight: 500;
+      border-radius: 50px;
+      font-weight: 600;
+      transition: 0.2s;
+    }
+
+    a.button:hover {
+      background: #ec4899;
     }
 
     footer {
       margin-top: 40px;
+      text-align: center;
       padding-top: 20px;
-      border-top: 1px solid rgba(255,255,255,0.1);
+      border-top: 1px solid #e5e7eb;
     }
 
   </style>
@@ -82,66 +69,66 @@
 
 <div class="container">
 
-<h1>Privacy Policy</h1>
+  <h1>Privacy Policy</h1>
 
-<p>Last updated: March 2026</p>
+  <p>Last updated: March 2026</p>
 
-<h2>Overview</h2>
-<p>
-This application is designed to generate automated reports for advertising performance
-and integrate data into Looker Studio dashboards.
-</p>
+  <h2>Overview</h2>
+  <p>
+    This application is designed to generate automated reports for advertising performance
+    and integrate data into Looker Studio dashboards.
+  </p>
 
-<h2>Data We Access</h2>
-<p>
-This application uses Google Ads API to access advertising data from authorized accounts.
-The data includes:
-</p>
+  <h2>Data We Access</h2>
+  <p>
+    This application uses Google Ads API to access advertising data from authorized accounts.
+    The data includes:
+  </p>
 
-<ul>
-  <li>Campaign names and IDs</li>
-  <li>Ad group and ad identifiers</li>
-  <li>Performance metrics such as impressions, clicks, cost, and conversions</li>
-</ul>
+  <ul>
+    <li>Campaign names and IDs</li>
+    <li>Ad group and ad identifiers</li>
+    <li>Performance metrics such as impressions, clicks, cost, and conversions</li>
+  </ul>
 
-<p>
-We do NOT access or process any personally identifiable information (PII).
-</p>
+  <p>
+    We do NOT access or process any personally identifiable information (PII).
+  </p>
 
-<h2>How We Use Data</h2>
-<ul>
-  <li>Generating performance reports</li>
-  <li>Analyzing advertising campaigns</li>
-  <li>Visualizing data in Looker Studio</li>
-</ul>
+  <h2>How We Use Data</h2>
+  <ul>
+    <li>Generating performance reports</li>
+    <li>Analyzing advertising campaigns</li>
+    <li>Visualizing data in Looker Studio</li>
+  </ul>
 
-<h2>Data Storage</h2>
-<p>
-We do not store Google Ads data permanently unless explicitly configured.
-Data may be processed temporarily for reporting purposes.
-</p>
+  <h2>Data Storage</h2>
+  <p>
+    We do not store Google Ads data permanently unless explicitly configured.
+    Data may be processed temporarily for reporting purposes.
+  </p>
 
-<h2>Data Sharing</h2>
-<p>
-We do not sell, share, or transfer your data to third parties.
-</p>
+  <h2>Data Sharing</h2>
+  <p>
+    We do not sell, share, or transfer your data to third parties.
+  </p>
 
-<h2>Security</h2>
-<p>
-We take reasonable measures to protect your data and securely handle API credentials.
-</p>
+  <h2>Security</h2>
+  <p>
+    We take reasonable measures to protect your data and securely handle API credentials.
+  </p>
 
-<h2>User Control</h2>
-<p>
-You can revoke access to your Google Ads account at any time via your Google account settings.
-</p>
+  <h2>User Control</h2>
+  <p>
+    You can revoke access to your Google Ads account at any time via your Google account settings.
+  </p>
 
-<h2>Contact</h2>
-<p>Email: kirillmks2003@gmail.com</p>
+  <h2>Contact</h2>
+  <p>Email: kirillmks2003@gmail.com</p>
 
-<footer>
-  <a class="button" href="index.html">Back to Home</a>
-</footer>
+  <footer>
+    <a class="button" href="index.html">Back to Home</a>
+  </footer>
 
 </div>
 
