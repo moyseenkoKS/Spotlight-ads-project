@@ -271,8 +271,14 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 30px;
-      align-items: stretch;
+      align-items: start; /* заголовок будет сверху, блоки выровнены сверху */
       margin-top: 20px;
+    }
+    
+    .about-grid > h2 {
+      grid-column: 1 / -1; /* если нужно, чтобы заголовок был на отдельной строке */
+      margin-bottom: 20px;
+      text-align: left;
     }
     
     /* Левый блок с градиентом */
@@ -489,8 +495,8 @@
 <!-- ABOUT US -->
 <section class="section gradient" id="about">
   <div class="container about-grid">
-    <!-- Заголовок блока -->
-    <h2 style="grid-column: 1 / -1; text-align:center; margin-bottom: 40px;">About Us</h2>
+    <!-- Заголовок слева -->
+    <h2>About Us</h2>
 
     <!-- Левый блок с миссией -->
     <div class="about-mission">
