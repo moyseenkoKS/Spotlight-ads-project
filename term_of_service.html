@@ -8,38 +8,43 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
   <style>
-    body {
-      font-family: 'Inter', sans-serif;
+    html, body {
+      height: 100%;
       margin: 0;
+      font-family: 'Inter', sans-serif;
       color: #111827;
       scroll-behavior: smooth;
+      background: #f9fafb; /* фон страницы */
     }
-
+  
     h1 { font-size: 42px; margin-bottom: 10px; }
     h2 { font-size: 28px; margin-bottom: 10px; }
     p { color: #4b5563; }
-
+  
     .container {
-      max-width: 900px;
-      margin: 80px auto;
+      width: 100%;
+      height: 100%;
       padding: 40px;
       background: white;
-      border-radius: 14px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start; /* контент сверху */
+      overflow-y: auto; /* прокрутка при большом контенте */
     }
-
+  
     ul {
       padding-left: 20px;
     }
-
+  
     li {
       margin-bottom: 6px;
     }
-
+  
     a {
       text-decoration: none;
     }
-
+  
     a.button {
       display: inline-block;
       padding: 12px 26px;
@@ -50,18 +55,17 @@
       font-weight: 600;
       transition: 0.2s;
     }
-
+  
     a.button:hover {
       background: #ec4899;
     }
-
+  
     footer {
-      margin-top: 40px;
+      margin-top: auto; /* прилипает к низу контейнера */
       text-align: center;
       padding-top: 20px;
       border-top: 1px solid #e5e7eb;
     }
-
   </style>
 </head>
 
