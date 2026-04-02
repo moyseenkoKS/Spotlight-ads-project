@@ -234,18 +234,25 @@
         height: 60px;
       }
     }
-      #formStatus {
+    #formStatus {
       margin-top: 15px;
       font-weight: 500;
       opacity: 0;
       transform: translateY(10px);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+      min-height: 20px; /* чтобы текст не прыгал */
     }
     
-    .success {
+    #formStatus.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    #formStatus.success {
       color: #10b981;
     }
     
-    .loading {
+    #formStatus.loading {
       color: #6366f1;
     }
     
@@ -489,9 +496,9 @@
   form.addEventListener('submit', (e) => {
     e.preventDefault();
   
-    // reset классов
-    status.classList.remove('success', 'loading', 'show');
-  
+    // сброс классов
+    status.classList.remove('success', 'loading');
+    
     // loading
     button.classList.add('loading');
     button.innerText = 'Sending...';
@@ -506,6 +513,8 @@
       status.classList.remove('loading');
       status.classList.add('success');
       status.innerText = '✅ Request sent successfully!';
+      // show оставляем, чтобы текст был виден
+      status.classList.add('show');
   
       form.reset();
     }, 1500);
