@@ -266,6 +266,84 @@
       opacity: 0.7;
       cursor: not-allowed;
     }
+        /* ABOUT US GRID */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      align-items: stretch;
+      margin-top: 20px;
+    }
+    
+    /* Левый блок с градиентом */
+    .about-mission {
+      background: linear-gradient(135deg, #6366f1, #a78bfa);
+      color: white;
+      padding: 50px 30px;
+      border-radius: 16px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+    }
+    
+    .about-mission h2 {
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+    
+    .about-mission p {
+      font-size: 24px;
+      font-weight: 600;
+    }
+    
+    /* Правый белый блок */
+    .about-info {
+      background: white;
+      padding: 50px 30px;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    }
+    
+    .about-info h2 {
+      font-size: 28px;
+      margin-bottom: 15px;
+    }
+    
+    .about-info p {
+      font-size: 18px;
+      font-weight: 500;
+      color: #4b5563;
+    }
+    
+    /* Адаптив под мобильные */
+    @media (max-width: 768px) {
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+    .about-mission, .about-info {
+      padding: 30px 20px;
+      text-align: center;
+    }
+  
+    .about-mission h2 {
+      font-size: 28px;
+    }
+  
+    .about-mission p {
+      font-size: 20px;
+    }
+  
+    .about-info h2 {
+      font-size: 24px;
+    }
+  
+    .about-info p {
+      font-size: 16px;
+    }
+  }
     
   </style>
 </head>
@@ -408,14 +486,23 @@
   </div>
 </section>
 
- <!-- ABOUT US -->
-<section class="section gradient" id="about">
-  <div class="container">
-    <h2>About Us</h2>
-    <p>
-      SpotAds is a young IT company focused on building modern services for automating business processes in marketing.
-      Our mission is to simplify advertising management, improve efficiency, and help businesses grow faster using smart automation tools.
-    </p>
+<!-- ABOUT US -->
+<section class="section" id="about">
+  <div class="container about-grid">
+    <!-- Левый блок с миссией -->
+    <div class="about-mission">
+      <h2>Our Mission</h2>
+      <p>Меньше времени на отчёты — больше на принятие решений.</p>
+    </div>
+
+    <!-- Правый белый блок с информацией о SpotAds -->
+    <div class="about-info">
+      <h2>About SpotAds</h2>
+      <p>
+        SpotAds — молодая IT-компания, создающая современные сервисы для автоматизации маркетинга.
+        Наша цель — упрощение управления рекламой, повышение эффективности и помощь бизнесу в росте с помощью умных инструментов автоматизации.
+      </p>
+    </div>
   </div>
 </section>
 
