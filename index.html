@@ -481,28 +481,32 @@
     });
   });
 
-
   // ===== FORM ANIMATION =====
   const form = document.getElementById('contactForm');
   const status = document.getElementById('formStatus');
   const button = document.getElementById('submitBtn');
-
+  
   form.addEventListener('submit', (e) => {
     e.preventDefault();
-
+  
+    // reset классов
+    status.classList.remove('success', 'loading', 'show');
+  
+    // loading
     button.classList.add('loading');
     button.innerText = 'Sending...';
-
-    status.className = 'loading show';
+  
+    status.classList.add('loading', 'show');
     status.innerText = '⏳ Sending your request...';
-
+  
     setTimeout(() => {
       button.classList.remove('loading');
       button.innerText = 'Request Demo';
-
-      status.className = 'success show';
+  
+      status.classList.remove('loading');
+      status.classList.add('success');
       status.innerText = '✅ Request sent successfully!';
-
+  
       form.reset();
     }, 1500);
   });
