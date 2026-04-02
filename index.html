@@ -234,6 +234,32 @@
         height: 60px;
       }
     }
+      #formStatus {
+      margin-top: 15px;
+      font-weight: 500;
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    
+    .success {
+      color: #10b981;
+    }
+    
+    .loading {
+      color: #6366f1;
+    }
+    
+    .show {
+      opacity: 1;
+      transform: translateY(0);
+      transition: 0.3s ease;
+    }
+    
+    button.loading {
+      opacity: 0.7;
+      cursor: not-allowed;
+    }
+    
   </style>
 </head>
 
@@ -421,10 +447,14 @@
 
     <div class="form-box">
       <form>
-        <input type="text" placeholder="Your name" required>
-        <input type="email" placeholder="Email address" required>
-        <button type="submit">Request Demo</button>
-      </form>
+        <form id="contactForm">
+          <input type="text" placeholder="Your name" required>
+          <input type="email" placeholder="Email address" required>
+          <button type="submit" id="submitBtn">
+            Request Demo
+          </button>
+          <div id="formStatus"></div>
+        </form>
     </div>
   </div>
 </section>
@@ -435,6 +465,7 @@
 </footer>
 
 <script>
+  // ===== BURGER MENU =====
   const burger = document.getElementById('burger');
   const menu = document.getElementById('mobileMenu');
   const links = menu.querySelectorAll('a');
@@ -447,6 +478,32 @@
     link.addEventListener('click', () => {
       menu.classList.remove('active');
     });
+  });
+
+
+  // ===== FORM ANIMATION =====
+  const form = document.getElementById('contactForm');
+  const status = document.getElementById('formStatus');
+  const button = document.getElementById('submitBtn');
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    button.classList.add('loading');
+    button.innerText = 'Sending...';
+
+    status.className = 'loading show';
+    status.innerText = '⏳ Sending your request...';
+
+    setTimeout(() => {
+      button.classList.remove('loading');
+      button.innerText = 'Request Demo';
+
+      status.className = 'success show';
+      status.innerText = '✅ Request sent successfully!';
+
+      form.reset();
+    }, 1500);
   });
 </script>
 
