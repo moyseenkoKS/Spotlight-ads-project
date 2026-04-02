@@ -398,12 +398,21 @@
   <a href="contacts.html">Contact</a>
 </footer>
 
-  <script>
+<script>
   const burger = document.getElementById('burger');
   const menu = document.getElementById('mobileMenu');
+  const links = menu.querySelectorAll('a');
 
+  // Открытие / закрытие
   burger.addEventListener('click', () => {
     menu.classList.toggle('active');
+  });
+
+  // Закрытие при клике на ссылку
+  links.forEach(link => {
+    link.addEventListener('click', () => {
+      menu.classList.remove('active');
+    });
   });
 </script>
 
