@@ -19,7 +19,6 @@
     h2 { font-size: 28px; margin-bottom: 10px; }
     p { color: #4b5563; }
 
-    /* HEADER */
     header {
       position: fixed;
       top: 0;
@@ -27,9 +26,9 @@
       background: white;
       border-bottom: 1px solid #e5e7eb;
       display: flex;
-      justify-content: space-between; /* лого и навигация слева, кнопка справа */
+      justify-content: space-between;
       align-items: center;
-      padding: 10px 50px; /* шире */
+      padding: 10px 50px;
       z-index: 1000;
       box-sizing: border-box;
     }
@@ -54,12 +53,11 @@
       color: #6366f1;
     }
 
-    /* Новая кнопка Contact Us */
     .contact-button {
       padding: 12px 26px;
-      background: #f472b6; /* розовый */
+      background: #f472b6;
       color: white;
-      border-radius: 50px; /* овал */
+      border-radius: 50px;
       text-decoration: none;
       font-weight: 600;
       transition: 0.2s;
@@ -69,7 +67,6 @@
       background: #ec4899;
     }
 
-    /* SECTIONS */
     .step-icon {
       width: 70px;
       margin-bottom: 10px;
@@ -87,7 +84,6 @@
     .white { background: #ffffff; }
     .gradient { background: linear-gradient(135deg, #fff1f2, #eef2ff); }
 
-    /* HERO */
     .hero {
       text-align: center;
       margin-top: 60px;
@@ -103,7 +99,6 @@
       border-radius: 10px;
     }
 
-    /* GRID */
     .grid {
       display: grid;
       gap: 20px;
@@ -133,7 +128,6 @@
       margin-bottom: 10px;
     }
 
-    /* PRICING */
     .plan {
       padding: 30px;
       border-radius: 14px;
@@ -146,7 +140,6 @@
       margin: 15px 0;
     }
 
-    /* FORM */
     .form-box {
       max-width: 500px;
       margin: 0 auto;
@@ -174,7 +167,6 @@
       cursor: pointer;
     }
 
-    /* FOOTER */
     footer {
       text-align: center;
       padding: 40px 20px;
@@ -186,75 +178,66 @@
       color: #4b5563;
       text-decoration: none;
     }
-    /* BURGER */
-  .burger {
-    display: none;
-    font-size: 28px;
-    cursor: pointer;
-  }
-  
-  /* MOBILE MENU */
-  .mobile-menu {
-    position: fixed;
-    top: 70px;
-    left: 0;
-    width: 100%;
-    background: white;
-    border-top: 1px solid #e5e7eb;
-    display: none;
-    flex-direction: column;
-    padding: 20px;
-    z-index: 999;
-  }
-  
-  .mobile-menu a {
-    padding: 12px 0;
-    text-decoration: none;
-    color: #374151;
-    font-weight: 500;
-  }
-  
-  /* ACTIVE STATE */
-  .mobile-menu.active {
-    display: flex;
-  }
-  
-  /* ADAPTIVE */
-  @media (max-width: 768px) {
-    nav {
-      display: none;
-    }
-  
-    .contact-button {
-      display: none;
-    }
-  
-    .burger {
-      display: block;
-    }
-  
-    header {
-      padding: 10px 20px;
-    }
-  
-    .logo {
-      height: 60px;
-    }
-  }
 
+    .burger {
+      display: none;
+      font-size: 28px;
+      cursor: pointer;
+    }
+
+    .mobile-menu {
+      position: fixed;
+      top: 70px;
+      left: 0;
+      width: 100%;
+      background: white;
+      border-top: 1px solid #e5e7eb;
+      display: none;
+      flex-direction: column;
+      padding: 20px;
+      z-index: 999;
+    }
+
+    .mobile-menu a {
+      padding: 12px 0;
+      text-decoration: none;
+      color: #374151;
+      font-weight: 500;
+    }
+
+    .mobile-menu.active {
+      display: flex;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+      }
+
+      .contact-button {
+        display: none;
+      }
+
+      .burger {
+        display: block;
+      }
+
+      header {
+        padding: 10px 20px;
+      }
+
+      .logo {
+        height: 60px;
+      }
+    }
   </style>
 </head>
 
-
-  
 <body>
-  
 
-<!-- HEADER -->
 <header>
   <div class="header-left">
     <img src="SpotAds_logo.png" class="logo">
-
     <nav class="nav">
       <a href="#platforms">Platforms</a>
       <a href="#how">How it works</a>
@@ -264,13 +247,9 @@
 
   <a href="#contact" class="contact-button">Contact Us</a>
 
-  <!-- Бургер -->
-  <div class="burger" id="burger">
-    ☰
-  </div>
+  <div class="burger" id="burger">☰</div>
 </header>
 
-<!-- Мобильное меню -->
 <div class="mobile-menu" id="mobileMenu">
   <a href="#platforms">Platforms</a>
   <a href="#how">How it works</a>
@@ -278,7 +257,6 @@
   <a href="#contact">Contact Us</a>
 </div>
 
-<!-- HERO -->
 <section class="section white hero">
   <div class="container">
     <h1>SpotAds Platform</h1>
@@ -290,7 +268,6 @@
   </div>
 </section>
 
-<!-- PLATFORMS -->
 <section class="section gradient" id="platforms">
   <div class="container">
     <h2>Supported Platforms</h2>
@@ -312,7 +289,44 @@
   </div>
 </section>
 
-<!-- HOW -->
+<!-- PRODUCT (перенесён вверх и расширен) -->
+<section class="section gradient">
+  <div class="container">
+    <h2>Product Overview</h2>
+    <p>
+      SpotAds provides powerful tools to automate, analyze, and optimize your advertising campaigns across multiple platforms.
+    </p>
+
+    <div class="grid grid-3">
+      <div class="card">
+        <h4>Unified Dashboard</h4>
+        <p>Manage all your advertising platforms in one place with a clear and intuitive interface.</p>
+      </div>
+      <div class="card">
+        <h4>Automated Reporting</h4>
+        <p>Generate real-time reports without manual work and track performance instantly.</p>
+      </div>
+      <div class="card">
+        <h4>AI Optimization</h4>
+        <p>Receive intelligent recommendations to improve campaign performance and reduce costs.</p>
+      </div>
+      <div class="card">
+        <h4>Cross-Platform Analytics</h4>
+        <p>Compare performance across Google, Facebook, and other networks بسهولة.</p>
+      </div>
+      <div class="card">
+        <h4>Budget Insights</h4>
+        <p>Understand where your budget is most effective and optimize spend allocation.</p>
+      </div>
+      <div class="card">
+        <h4>Fast Integration</h4>
+        <p>Connect your ad accounts in minutes and start tracking immediately.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW (перенесён ниже) -->
 <section class="section white" id="how">
   <div class="container">
     <h2>How It Works</h2>
@@ -342,18 +356,6 @@
   </div>
 </section>
 
-<!-- PRODUCT -->
-<section class="section gradient">
-  <div class="container">
-    <h2>Product Overview</h2>
-    <p>
-      SpotAds uses the Google Ads API and other advertising APIs to automate reporting,
-      campaign analysis, and performance monitoring.
-    </p>
-  </div>
-</section>
-
-<!-- PRICING -->
 <section class="section white" id="pricing">
   <div class="container">
     <h2>Pricing</h2>
@@ -378,7 +380,6 @@
   </div>
 </section>
 
-<!-- CONTACT -->
 <section class="section gradient" id="contact">
   <div class="container">
     <h2 style="text-align:center;">Contact Us</h2>
@@ -403,12 +404,10 @@
   const menu = document.getElementById('mobileMenu');
   const links = menu.querySelectorAll('a');
 
-  // Открытие / закрытие
   burger.addEventListener('click', () => {
     menu.classList.toggle('active');
   });
 
-  // Закрытие при клике на ссылку
   links.forEach(link => {
     link.addEventListener('click', () => {
       menu.classList.remove('active');
