@@ -19,6 +19,14 @@
       color: #111827;
     }
 
+    /* Твой логотип (верхний левый угол) */
+    .main-logo {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      height: 50px;
+    }
+
     .card {
       background: white;
       padding: 40px;
@@ -27,6 +35,12 @@
       box-shadow: 0 10px 30px rgba(0,0,0,0.08);
       max-width: 600px;
       width: 90%;
+    }
+
+    /* Логотип Google Ads */
+    .ads-logo {
+      height: 50px;
+      margin-bottom: 15px;
     }
 
     h1 {
@@ -59,6 +73,11 @@
       text-decoration: none;
       margin-top: 20px;
       cursor: pointer;
+      border: none; /* убрали обводку */
+    }
+
+    .button:hover {
+      background: #4f46e5;
     }
 
     .success {
@@ -70,7 +89,14 @@
 
 <body>
 
+  <!-- Твой логотип -->
+  <img src="spot_ads_web_lobo.png" class="main-logo" alt="Spot Ads Logo">
+
   <div class="card">
+
+    <!-- Google Ads логотип -->
+    <img src="google-ads-logo.png" class="ads-logo" alt="Google Ads">
+
     <h1>OAuth Token Received 🎉</h1>
     <p id="status">Parsing data from URL...</p>
 
