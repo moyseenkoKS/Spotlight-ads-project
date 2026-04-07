@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>OAuth Token</title>
+  <title>OAuth Code</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -19,7 +19,6 @@
       color: #111827;
     }
 
-    /* Твой логотип (верхний левый угол) */
     .main-logo {
       position: fixed;
       top: 20px;
@@ -37,7 +36,6 @@
       width: 90%;
     }
 
-    /* Логотип Google Ads */
     .ads-logo {
       height: 50px;
       margin-bottom: 15px;
@@ -54,8 +52,8 @@
     }
 
     .token-box {
-      background: #f9fafb;
-      border: 1px solid #e5e7eb;
+      background: #fff1f2;
+      border: 1px solid #f472b6;
       padding: 15px;
       border-radius: 10px;
       font-family: monospace;
@@ -70,10 +68,9 @@
       background: #6366f1;
       color: white;
       border-radius: 10px;
-      text-decoration: none;
       margin-top: 20px;
       cursor: pointer;
-      border: none; /* убрали обводку */
+      border: none;
     }
 
     .button:hover {
@@ -84,77 +81,60 @@
       color: #10b981;
       font-weight: 500;
     }
+
+    .error {
+      color: #ef4444;
+      font-weight: 500;
+    }
   </style>
 </head>
 
 <body>
 
-  <!-- Твой логотип -->
   <img src="../spot_ads_web_lobo.png" class="main-logo" alt="Spot Ads Logo">
 
   <div class="card">
-
-    <!-- Google Ads логотип -->
     <img src="../google-ads-logo.png" class="ads-logo" alt="Google Ads">
 
-    <h1>OAuth Token Received 🎉</h1>
-    <p id="status">Parsing data from URL...</p>
+    <h1>OAuth Code</h1>
+    <p id="status">Parsing URL...</p>
 
-    <div id="tokens"></div>
+    <div id="codeBox"></div>
 
-    <button class="button" onclick="copyAll()">Copy All</button>
+    <button class="button" onclick="copyCode()">Copy Code</button>
   </div>
 
   <script>
-    function parseParams(str) {
-      const params = new URLSearchParams(str);
-      const obj = {};
-      for (const [key, value] of params.entries()) {
-        obj[key] = value;
-      }
-      return obj;
-    }
-
-    function getAllParams() {
-      const query = window.location.search.substring(1);
-      const hash = window.location.hash.substring(1);
-
-      return {
-        ...parseParams(query),
-        ...parseParams(hash)
-      };
+    function getCode() {
+      const params = new URLSearchParams(window.location.search);
+      return params.get("code");
     }
 
     function render() {
-      const data = getAllParams();
-      const container = document.getElementById("tokens");
+      const code = getCode();
       const status = document.getElementById("status");
+      const box = document.getElementById("codeBox");
 
-      if (Object.keys(data).length === 0) {
-        status.innerText = "No tokens found in URL";
+      if (!code) {
+        status.innerHTML = '<span class="error">No code found in URL</span>';
         return;
       }
 
-      status.innerHTML = '<span class="success">Data successfully parsed</span>';
+      status.innerHTML = '<span class="success">Code received successfully</span>';
 
-      let html = "";
-      for (const key in data) {
-        html += `
-          <div class="token-box">
-            <strong>${key}:</strong><br>${data[key]}
-          </div>
-        `;
-      }
-
-      container.innerHTML = html;
+      box.innerHTML = `
+        <div class="token-box">
+          ${code}
+        </div>
+      `;
     }
 
-    function copyAll() {
-      const data = getAllParams();
-      const text = JSON.stringify(data, null, 2);
+    function copyCode() {
+      const code = getCode();
+      if (!code) return;
 
-      navigator.clipboard.writeText(text);
-      alert("Copied!");
+      navigator.clipboard.writeText(code);
+      alert("Code copied!");
     }
 
     render();
