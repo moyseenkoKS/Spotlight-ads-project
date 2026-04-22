@@ -1,95 +1,190 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Facebook OAuth Redirect</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- Inter font -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
 
   <style>
     body {
       font-family: 'Inter', sans-serif;
       margin: 0;
-      background: radial-gradient(circle at top, #1f2937, #020617);
-      color: #e5e7eb;
+      background: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      color: #111827;
     }
 
-    .container {
-      max-width: 700px;
-      margin: 80px auto;
+    .main-logo {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      height: 50px;
+    }
+
+    .card {
+      background: white;
       padding: 40px;
-      background: rgba(15, 23, 42, 0.85);
       border-radius: 16px;
-      box-shadow: 0 20px 50px rgba(0,0,0,0.6);
-      backdrop-filter: blur(10px);
       text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      max-width: 620px;
+      width: 90%;
+    }
+
+    .ads-logo {
+      height: 55px;
+      margin-bottom: 15px;
     }
 
     h1 {
-      font-size: 32px;
-      margin-bottom: 20px;
-      color: #ffffff;
+      font-size: 28px;
+      margin-bottom: 12px;
+      color: #111827;
     }
 
     p {
-      font-size: 16px;
-      color: #cbd5f5;
+      color: #6b7280;
       line-height: 1.6;
+      margin-bottom: 20px;
     }
 
     .token {
-      margin-top: 20px;
-      padding: 12px 16px;
-      background: rgba(99,102,241,0.1);
-      border-radius: 12px;
+      margin-top: 15px;
+      padding: 15px;
+      background: #eff6ff;
+      border: 1px solid #3b82f6;
+      border-radius: 10px;
       word-break: break-all;
       font-family: monospace;
       font-size: 14px;
-      color: #6366f1;
+      color: #1d4ed8;
+      text-align: left;
     }
 
     .button {
       display: inline-block;
-      padding: 10px 16px;
-      margin-top: 30px;
-      background: linear-gradient(135deg, #6366f1, #8b5cf6);
+      padding: 12px 20px;
+      margin-top: 20px;
+      background: #1877f2;
       color: white;
       border-radius: 10px;
       text-decoration: none;
       font-weight: 500;
+      border: none;
+      cursor: pointer;
+    }
+
+    .button:hover {
+      background: #166fe5;
+    }
+
+    .secondary-btn {
+      background: #111827;
+      margin-left: 10px;
+    }
+
+    .secondary-btn:hover {
+      background: #000000;
+    }
+
+    .success {
+      color: #10b981;
+      font-weight: 500;
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    .error {
+      color: #ef4444;
+      font-weight: 500;
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    .actions {
+      margin-top: 10px;
+    }
+
+    @media (max-width: 640px) {
+      .card {
+        padding: 28px;
+      }
+
+      .secondary-btn {
+        margin-left: 0;
+        margin-top: 10px;
+      }
+
+      .actions a,
+      .actions button {
+        width: 100%;
+      }
     }
   </style>
 
   <script>
-    // Автоматическое получение токена из URL
-    window.addEventListener('DOMContentLoaded', () => {
+    let currentToken = "";
+
+    window.addEventListener("DOMContentLoaded", () => {
       const hash = window.location.hash;
-      const tokenContainer = document.getElementById('token');
-      if (hash.includes('access_token')) {
+      const tokenContainer = document.getElementById("token");
+      const status = document.getElementById("status");
+
+      if (hash.includes("access_token")) {
         const params = new URLSearchParams(hash.substring(1));
-        const token = params.get('access_token');
+        const token = params.get("access_token");
+
+        currentToken = token || "";
+
+        status.innerHTML = '<span class="success">Токен успешно получен</span>';
         tokenContainer.textContent = token;
       } else {
-        tokenContainer.textContent = "Токен не найден. Скопируйте его вручную из адресной строки браузера.";
+        status.innerHTML = '<span class="error">Токен не найден</span>';
+        tokenContainer.textContent =
+          "Скопируйте токен вручную из адресной строки браузера.";
       }
     });
+
+    function copyToken() {
+      if (!currentToken) return;
+
+      navigator.clipboard.writeText(currentToken);
+      alert("Токен скопирован!");
+    }
   </script>
 </head>
 
 <body>
 
-<div class="container">
-  <h1>Авторизация Facebook завершена</h1>
-  <p>
-    Ваш токен доступа возвращён в адресной строке URL. Скопируйте его ниже, 
-    или, если он не появился автоматически, скопируйте вручную из браузера.
-  </p>
+  <img src="../spot_ads_web_lobo.png" class="main-logo" alt="Spot Ads Logo" />
 
-  <div id="token" class="token">Загрузка токена...</div>
+  <div class="card">
+    <img src="../facebook-logo.png" class="ads-logo" alt="Facebook Ads" />
 
-  <a class="button" href="https://your-homepage.com">Вернуться на главную</a>
-</div>
+    <h1>Facebook OAuth Redirect</h1>
+
+    <div id="status">Проверка токена...</div>
+
+    <p>
+      Ваш access token был возвращён после авторизации Facebook.
+      Скопируйте его ниже для дальнейшего использования.
+    </p>
+
+    <div id="token" class="token">Загрузка токена...</div>
+
+    <div class="actions">
+      <button class="button" onclick="copyToken()">Copy Token</button>
+      <a class="button secondary-btn" href="https://your-homepage.com">
+        Вернуться на главную
+      </a>
+    </div>
+  </div>
 
 </body>
 </html>
