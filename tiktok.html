@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>TikTok OAuth Code</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      background: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      color: #111827;
+    }
+
+    .main-logo {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      height: 50px;
+    }
+
+    .card {
+      background: white;
+      padding: 40px;
+      border-radius: 16px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      max-width: 600px;
+      width: 90%;
+    }
+
+    .ads-logo {
+      height: 60px;
+      margin-bottom: 15px;
+    }
+
+    h1 {
+      font-size: 26px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: #6b7280;
+      margin-bottom: 20px;
+    }
+
+    .token-box {
+      background: #f8fafc;
+      border: 1px solid #111827;
+      padding: 15px;
+      border-radius: 10px;
+      font-family: monospace;
+      word-break: break-all;
+      text-align: left;
+      margin-top: 15px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 12px 20px;
+      background: #111827;
+      color: white;
+      border-radius: 10px;
+      margin-top: 20px;
+      cursor: pointer;
+      border: none;
+    }
+
+    .button:hover {
+      background: #000000;
+    }
+
+    .success {
+      color: #10b981;
+      font-weight: 500;
+    }
+
+    .error {
+      color: #ef4444;
+      font-weight: 500;
+    }
+  </style>
+</head>
+
+<body>
+
+  <img src="/spot_ads_web_lobo.png" class="main-logo" alt="Spot Ads Logo" />
+
+  <div class="card">
+    <img src="/tiktok-logo.png" class="ads-logo" alt="TikTok Ads" />
+
+    <h1>TikTok OAuth Code</h1>
+    <p id="status">Parsing URL...</p>
+
+    <div id="codeBox"></div>
+
+    <button class="button" onclick="copyCode()">Copy Code</button>
+  </div>
+
+  <script>
+    function getCode() {
+      const params = new URLSearchParams(window.location.search);
+      return params.get("code");
+    }
+
+    function render() {
+      const code = getCode();
+      const status = document.getElementById("status");
+      const box = document.getElementById("codeBox");
+
+      if (!code) {
+        status.innerHTML = '<span class="error">No code found in URL</span>';
+        return;
+      }
+
+      status.innerHTML = '<span class="success">Code received successfully</span>';
+
+      box.innerHTML = `
+        <div class="token-box">
+          ${code}
+        </div>
+      `;
+    }
+
+    function copyCode() {
+      const code = getCode();
+      if (!code) return;
+
+      navigator.clipboard.writeText(code);
+      alert("Code copied!");
+    }
+
+    render();
+  </script>
+
+</body>
+</html>
